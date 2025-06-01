@@ -1,0 +1,17 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/infonow
+/infonow-test-*
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
+dub.selections.json
