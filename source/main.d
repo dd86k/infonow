@@ -2,6 +2,7 @@ module main;
 
 import std.stdio;
 import gpu.amdgpu;
+import cpu;
 
 void main(string[] args)
 {
@@ -20,6 +21,9 @@ void main(string[] args)
             break;
         case "%gpumemtemp":
             stdout.write(amdgpu_gpu_mem_temp());
+            break;
+        case "%cpu":
+            stdout.writef("%.2f", cpu_usage());
             break;
         default:
             stdout.write(arg);
