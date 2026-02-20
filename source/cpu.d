@@ -26,8 +26,9 @@ CPUStats read_cpu_stats()
     CPUStats stats;
     
     string b = void; // for "cpu"
+    uint r = void;
     with (stats)
-    assert(formattedRead(line, "%s %u %u %u %u %u %u %u %u",
+    r = formattedRead(line, "%s %d %d %d %d %d %d %d %d",
         b,
         user,
         nice,
@@ -36,7 +37,8 @@ CPUStats read_cpu_stats()
         iowait,
         irq,
         softirq,
-        steal) == 9);
+        steal);
+    assert(r == 9);
     
     return stats;
 }
@@ -48,7 +50,7 @@ double cpu_usage()
     
     CPUStats a = read_cpu_stats();
     
-    Thread.sleep(dur!"msecs"(50));
+    Thread.sleep(dur!"msecs"(100));
     
     CPUStats b = read_cpu_stats();
     
