@@ -41,11 +41,11 @@ void main(string[] args)
     }
     catch (Exception ex)
     {
-        stdout.write("error");
+        stderr.write("error");
         // I think WlxOverlay only reads up to a line (or EOF)
         // So this might be safe for testing purposes
-        stdout.writeln();
-        stdout.writeln(ex);
+        stderr.writeln();
+        stderr.writeln(ex);
     }
     stdout.flush();
 }
